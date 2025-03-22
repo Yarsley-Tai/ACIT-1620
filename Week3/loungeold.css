@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+h1,
+h2 {
+  color: grey;
+}
+h1 {
+  border-bottom: 1px solid black;
+}
+p.GreenTea {
+  color: green;
+}
+p.Raspberry {
+  color: blue;
+}
+p.BlueBerry {
+  color: purple;
+}
+p.Cranberry {
+  color: red;
+}
+p {
+  color: maroon;
+}
+em {
+  font-family: Impact, Velvtica, "Arial", sans-serif;
+}
