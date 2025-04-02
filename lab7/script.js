@@ -12,40 +12,49 @@
 // The input field where the user types a new color (id="colorInput")
 
 // Task 1 code goes here
-
+let colorBox = document.getElementById("colorBox");
+let colorButtons = document.getElementById("colorButtons");
+let addColorForm = document.getElementById("addColorForm");
+let colorInput = document.getElementById("colorInput");
 // Task 2: Change color when a button is clicked
 
-// You want users to be able to click on a color button to change the background 
-// color of a display box (colorBox). 
+// You want users to be able to click on a color button to change the background
+// color of a display box (colorBox).
 // Each color button has the class "color-btn".
-// Write a JavaScript event listener that does the following when a button 
+// Write a JavaScript event listener that does the following when a button
 // inside the colorButtons container is clicked:
 // (1) Checks if the clicked element has the class "color-btn"
 // (2) Gets the backgroundColor style of that button
 // (3) Updates the colorBox's background to that color
 // (4) Displays the name or hex code of the color as text inside the colorBox
-// Hint: Use addEventListener on the color buttons container, and access 
+// Hint: Use addEventListener on the color buttons container, and access
 // the clicked element with event.target.
 
-
 // Task 2 code goes here
-
+colorButtons.addEventListener("click", function (s) {
+  const button = event.target;
+  if (button.className == "color-btn") {
+    bgColor = button.style.backgroundColor;
+    colorBox.style.backgroundColor = bgColor;
+    colorBox.innerHTML = bgColor;
+  }
+});
 // Please do not change the existing code
 // Add new color button
-addColorForm.addEventListener('submit', function (e) {
+addColorForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const newColor = colorInput.value.trim();
   if (!newColor) return;
 
   // Create a new button
-  const newBtn = document.createElement('button');
-  newBtn.className = 'color-btn';
+  const newBtn = document.createElement("button");
+  newBtn.className = "color-btn";
   newBtn.style.backgroundColor = newColor;
 
   // Optional: set a fallback text color name
   newBtn.title = newColor;
 
   colorButtons.appendChild(newBtn);
-  colorInput.value = '';
+  colorInput.value = "";
 });
